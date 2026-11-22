@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Inter', 'Vazirmatn', system-ui, sans-serif;
+    @apply bg-slate-50 text-slate-900 antialiased;
+  }
+
+  [dir="rtl"] body {
+    font-family: 'Vazirmatn', 'Inter', system-ui, sans-serif;
+  }
+}
