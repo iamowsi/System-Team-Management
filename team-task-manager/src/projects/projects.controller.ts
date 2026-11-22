@@ -14,7 +14,12 @@ import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { ProjectRolesGuard } from '../auth/guards/project-roles.guard';
 import { AddMemberDto, CreateProjectDto } from './dto/project.dto';
 import { ProjectsService } from './projects.service';
+import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
+@ApiTags('Projects')
+@ApiBearerAuth('JWT-auth')
+@UseGuards(JwtAuthGuard, ProjectRolesGuard)
+@Controller('projects')
 @UseGuards(JwtAuthGuard, ProjectRolesGuard)
 @Controller('projects')
 export class ProjectsController {
